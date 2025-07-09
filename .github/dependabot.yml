@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"         # path where settings.gradle is
+    schedule:
+      interval: "daily"   # or "daily", "monthly"
+    open-pull-requests-limit: 5
