@@ -4,7 +4,7 @@ updates:
     directory: "/"         # path where settings.gradle is
     schedule:
       interval: "daily"   # or "daily", "monthly"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     reviewers:
       - "cbelloda"
     assignees:
