@@ -1,0 +1,40 @@
+[versions]
+sonarqube-version = "5.1.0.4882"
+springboot-version = "3.2.4"
+springboot-dependency-management-version = "1.1.7"
+spring-cloud-version = "2024.0.1"
+spring-cloud-azure-version = "5.22.0"
+liquibase-version = "4.27.0"
+mssql-jdbc-version = "11.2.3.jre17"
+jackson = "2.17.1"
+
+[plugins]
+sonarqube = { id= "org.sonarqube" , version.ref = "sonarqube-version" }
+springboot = { id= "org.springframework.boot", version.ref="springboot-version" } 
+springbootdependencymanagement = { id = "io.spring.dependency-management", version.ref = "springboot-dependency-management-version" }
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-core", version.ref = "jackson" }
+
+[libraries]
+
+# test 
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+reactor-test = { group = "io.projectreactor", name = "reactor-test" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
+
+# Database dependencies
+spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa" }
+mssql-jdbc = { group = "com.microsoft.sqlserver", name = "mssql-jdbc", version.ref = "mssql-jdbc-version" }
+liquibase-core = { group = "org.liquibase", name = "liquibase-core", version.ref = "liquibase-version" }
+
+# lombok
+lombok = { group = "org.projectlombok", name = "lombok" }
+
+# Checkstyle
+
+# BOMs/Platforms
+spring-cloud-bom = { group = "org.springframework.cloud", name = "spring-cloud-dependencies", version.ref = "spring-cloud-version" }
+spring-cloud-azure-bom = { group = "com.azure.spring", name = "spring-cloud-azure-dependencies", version.ref = "spring-cloud-azure-version" }
+
+[bundles]
+test-implementation = ["spring-boot-starter-test", "reactor-test"]
+test-runtime = ["junit-platform-launcher"]
