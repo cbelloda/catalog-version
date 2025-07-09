@@ -1,0 +1,3 @@
+rootProject.name = 'version-catalog'
+
+enableFeaturePreview('TYPESAFE_PROJECT_ACCESSORS')
